@@ -2,6 +2,7 @@
 \usepackage{geometry}
 \geometry{margin=1in}
 \usepackage[ruled]{algorithm2e}
+\usepackage{amsmath}
 
 \title{A Dynamic Programming algorithm for the CVCM reconstruction problem}
 \author{Ahmad Kazemi}
@@ -44,7 +45,7 @@ Finally, the recursive function is determined as
 $$v_t(s_t) = max_{a \in \alpha(t)}\{c(a) + v_{t+1}(\beta(s_t,a_t))\}.$$
 $v_t(s_t)$ shows the money in state $s_t$ in stage $t$. 
 Moreover, the initial condition to start the DP algorithm is the state with the money equal as the given budget $(B)$ and no machine in hand. 
-The DP algorithm starts with this initial condition and moves forward to reach the final base subproblems that are easy to solve. Then, based on the recursive function, it recursively backtracks from there to build the optimal solution.
+The DP algorithm starts with this initial condition and moves forward to reach the final base subproblems that are easy to solve. Then, based on the recursive function, it recursively backtracks from there to build the optimal solution. For especial cases ($M=\emptyset$, $D=0$, or $B < \text{cheapest machine}$), the solution equals to the given budget ($B$).
 
 
 \end{document}

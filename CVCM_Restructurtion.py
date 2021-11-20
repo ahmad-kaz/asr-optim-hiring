@@ -124,7 +124,8 @@ def get_max(ins: Instance, state: Tuple[str, int, int, int]) -> int:
     
 def DP(ins: Instance):
     if ins.machine_num == 0 or ins.budget < min(ins.price.values()) or ins.day_num == 0:
-        return 0
+        ins.best = ins.budget
+        return 
     #initial state: (resell/buy, value, machine, d)
     #machine = -1 means no machine in hand
     stage = ("b", ins.budget, -1, 0)
