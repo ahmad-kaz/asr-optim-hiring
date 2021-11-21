@@ -38,8 +38,8 @@ For the day $D+1$, we need to make reselling decisions only.
 
 Since the \emph{base subproblems} are at the end of time horizon, I decided to develop a \emph{forward} dynamic programming algorithm.
 The set $\alpha(s_t)$ returns the possible actions at a state (which I will define soon). An action $a$ can be reselling of the current machine or buying new machines and contributes $c(a)$ to the money in hand.
-For this problem, we can define the state as a tuple of the current machine $(m_s)$ and the available money $(v_w)$, i.e. $s = (m_s, v_s)$.
-The function $\beta(s_t, a_t)$ determines the next state when action $a_t$ is taken in state $s_t$.
+For this problem, we can define the state as a tuple of the current machine $(m_s)$ and the available money $(v_s)$, i.e. $s = (m_s, v_s)$.
+The function $\beta(s_t, a_t)$ determines the next state when action $a_t$ is taken in the state $s_t$.
 This function determines the next state based on reselling/buying decisions and the days available in the set of stages.
 Finally, the recursive function is determined as
 $$v_t(s_t) = max_{a \in \alpha(t)}\{c(a) + v_{t+1}(\beta(s_t,a_t))\}.$$
